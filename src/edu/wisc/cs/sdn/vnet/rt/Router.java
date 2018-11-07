@@ -216,7 +216,7 @@ public class Router extends Device {
         if (null == arpEntry)
         {
 			if (!arpQueue.containsKey(nextHop)) {
-				arpQueue.put(nextHop, new LinkedList<>());
+				arpQueue.put(nextHop, new LinkedList<PacketInterfacePair>());
 			}
 			arpQueue.get(nextHop).add(new PacketInterfacePair(etherPacket, inIface, outIface));
 			// send ARP request
