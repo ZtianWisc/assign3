@@ -195,7 +195,7 @@ public class Router extends Device {
         int dstAddr = ipPacket.getDestinationAddress();
         // Find matching route table entry 
         RouteEntry bestMatch = this.routeTable.lookup(dstAddr);
-        // If no entry matched, do nothing
+        // If no entry matched, send ICMP
         if (null == bestMatch)
         {
         	System.out.println("Generating destination net unreachable ICMP");
